@@ -13,6 +13,8 @@
   "dependencies": {
     "body-parser": "^1.18.2",
     "express": "^4.16.2",
-    "nodemon": "^1.14.11"
+    "mysql2": "^1.5.1",
+    "nodemon": "^1.14.11",
+    "sequelize": "^4.31.2"
   }
 }

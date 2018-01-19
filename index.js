@@ -1,5 +1,6 @@
 const express = require('express')
 const routers = require('./routers')
+require('./sequelize')
 
 const app = express()
 

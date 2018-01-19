@@ -1,10 +1,14 @@
 const express = require('express')
 const router = express.Router()
+const Todos = require('./models/Todos')
 
-router.get('/todos', function(req, res){
-  res.send({
-    message: "todos lists"
-  })
+router.get('/todos', async function(req, res){
+  // Todos.findAll().then((todos)=>{
+  //   res.send(todos)
+  // })
+
+  const todos = await Todos.findAll()
+  res.send(todos)
 })
 
 router.post('/todos', function(req, res){

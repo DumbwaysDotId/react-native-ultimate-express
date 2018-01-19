@@ -1,3 +1,6 @@
+const Sequelize = require('sequelize')
+const sequelize = require('../sequelize')
+
 const Todos = sequelize.define('todos', {
   name: {
     type: Sequelize.STRING
@@ -7,4 +10,4 @@ const Todos = sequelize.define('todos', {
   },
 })
 
-module.exports Todos
+module.exports = Todos

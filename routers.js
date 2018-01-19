@@ -8,7 +8,11 @@ router.get('/todos', function(req, res){
 })
 
 router.post('/todos', function(req, res){
-  res.send('POSTS a todos')
+  const data = req.body
+  res.send({
+    name: data.name,
+    description: data.description
+  })
 })
 
 router.get('/todos/:id', function(req, res){

@@ -19,8 +19,9 @@ router.post('/todos', function(req, res){
   })
 })
 
-router.get('/todos/:id', function(req, res){
-  res.send('GET a Todo')
+router.get('/todos/:id', async function(req, res){
+  const todo = await Todos.findById(req.params.id)
+  res.send(todo)
 })
 
 router.patch('/todos/:id', function(req, res){

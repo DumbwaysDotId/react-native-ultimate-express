@@ -11,12 +11,10 @@ router.get('/todos', async function(req, res){
   res.send(todos)
 })
 
-router.post('/todos', function(req, res){
+router.post('/todos', async function(req, res){
   const data = req.body
-  res.send({
-    name: data.name,
-    description: data.description
-  })
+  const todo = await Todos.create(data)
+  res.send(todo)
 })
 
 router.get('/todos/:id', async function(req, res){

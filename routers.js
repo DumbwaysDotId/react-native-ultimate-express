@@ -22,8 +22,12 @@ router.get('/todos/:id', async function(req, res){
   res.send(todo)
 })
 
-router.patch('/todos/:id', function(req, res){
-  res.send('PATCH a todos')
+router.patch('/todos/:id', async function(req, res){
+  const data = req.body;
+  const todo = await Todos.update(data, {
+    where: {id: req.params.id},
+  });
+  res.send(todo)
 })
 
 router.delete('/todos/:id', function(req, res){

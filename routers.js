@@ -30,8 +30,13 @@ router.patch('/todos/:id', async function(req, res){
   res.send(todo)
 })
 
-router.delete('/todos/:id', function(req, res){
-  res.send('DELETE a todos')
+router.delete('/todos/:id', async function(req, res){
+  await Todos.destroy({
+    where: {id: req.params.id}
+  });
+  res.send({
+    message: 'delete success'
+  })
 })
 
 module.exports = router
